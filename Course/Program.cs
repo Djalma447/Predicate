@@ -14,17 +14,12 @@ namespace Course
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            list.RemoveAll(ProductTest); // Usando o Método 'ProductTest' como referência para realizar função desejada
+            list.RemoveAll(p => p.Price >= 100.0); // Usando Expressão Lambda para realizar função desejada
 
             foreach(Product p in list)
             {
                 Console.WriteLine(p);
             }
-        }
-
-        static bool ProductTest(Product p)
-        {
-            return p.Price >= 100.0; // Método Auxiliar para ser usado como Argumento para o Método 'RemoveAll'
         }
     }
 }
